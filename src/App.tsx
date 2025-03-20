@@ -18,9 +18,6 @@ export const goodsFromServer = [
   'Garlic',
 ];
 
-const SORT_BY_ALPHABET = 'alphabet';
-const SORT_BY_LENGTH = 'length';
-
 enum SortBy {
   default = '',
   alphabet = 'alphabet',
@@ -43,10 +40,10 @@ function sortList(
   if (sortBy) {
     sortedList.sort((good1, good2) => {
       switch (sortBy) {
-        case SORT_BY_ALPHABET:
+        case SortBy.alphabet:
           return good1.localeCompare(good2);
 
-        case SORT_BY_LENGTH:
+        case SortBy.length:
           return good1.length - good2.length;
 
         default:
